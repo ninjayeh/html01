@@ -1,0 +1,58 @@
+ <!DOCTYPE html> 
+ <html>
+   <head>
+	    <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+      <script type="text/javascript" language="javascript">
+ 
+        function videopanel(id) { 
+            str = '<iframe width="100%" height="350" src="http://www.youtube.com/embed/' + id + '" frameborder="0" allowfullscreen></iframe>';
+            return str;
+        }
+ 
+		/// 取代原程式的jQuery("#id").bind("click touch" ...之作用 ///
+		function videochange(id) {
+			document.getElementById("player").innerHTML = videopanel(id);		
+		}
+
+      </script>
+ 
+   </head>
+   <body>
+
+ 
+	
+			
+			<div id="player">
+			<iframe width="100%" height="350" src="http://www.youtube.com/embed/AFWkSPO_puo" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+            <br /><br />
+ 
+            <ul data-role="listview" data-inset="true" data-filter="true" class="collection" id="abc">
+                  
+            </ul>
+			
+			<script>
+			var videoid = new Array("AFWkSPO_puo","zd8qtK59bQA","pAyMDW2we1s","v9uz2arjwEo","gf0fLrzchBk","Ghrk0tVwx14");
+			var videotitle = new Array("召回","活著","雙龍","英雄","最後的壁壘機兵","潛入");
+			var i=0;
+			var str="";
+			for ( i=0 ; i<6 ; i++)
+			  {
+			   str += '<li class="collection-item"><a href=\'javascript:videochange("' +  videoid[i] + '")\'>' + videotitle[i] + '</a><a href="#!" class="secondary-content"><i class="material-icons">grade</i></a></li>'; 
+			  }
+			
+			document.getElementById("abc").innerHTML = str;
+			</script>
+  
+    
+ 
+   </body>
+   </html>
